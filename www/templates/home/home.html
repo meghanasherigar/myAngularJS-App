@@ -1,0 +1,21 @@
+	<div>
+   <div ng-init="onloadFun()" >
+      <div class="myprofile_heading">
+         <div  class="welcomeHeading">Welcome {{login_user.name}}!!!!</div>
+      </div>
+      <div class="login_image">
+         <img ng-src="{{login_user.url}}" style="max-width:100%;height:100%;" ng-click="mydetials()" >
+      </div>
+      <div ng-hide="loaded" class="loader">
+         <img  ng-src="images/loadingimg.gif">
+      </div>
+      <div class="menu_data">
+         <div  ng-repeat="x in user" class="tab_user " >
+            <div ng-if="x.id!= userlogin.id " class="profile_details" ng-click="showOtherDetails(x)">
+               <div  class="user_image" > <img ng-src="{{x.url}}" style="max-width:100%;height:100%;"  id="imagid"></div>
+               <div class="user_name">{{x.name}}</div>
+            </div>
+         </div>
+       </div>
+    </div>
+</div>

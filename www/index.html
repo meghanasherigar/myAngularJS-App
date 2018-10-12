@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html ng-app="angularApp">
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+      <title>AngularJS Demo</title>
+      <link href="css/style.css" rel="stylesheet">
+      <link href="css/bootstrap.css" rel="stylesheet">
+      <script src="js/jquery/jquery.min.js"></script>
+      <script src="js/bootstrap/bootstrap.min.js"></script>
+      <script src="js/angular-1.4.7/angular.js"></script>
+      <script src="js/angular-1.4.7/angular-route.min.js"></script>
+      <script src="js/index.js"></script>
+      <script src="js/app.js"></script>
+      <script src="templates/login/loginController.js"></script>
+      <script src="templates/login/loginservice.js"></script>
+      <script src="templates/home/homecontroller.js"></script>
+      <script src="templates/home/homeservice.js"></script>
+      <script src="templates/My_details/profileController.js"></script>
+      <script src="templates/My_details/profileservice.js"></script>
+      <script src="templates/more/morecontroller.js"></script>
+      <script src="templates/more/moreservice.js"></script>
+      <script src="templates/companyPhotos/galleryController.js"></script>
+      <script src="templates/companyPhotos/galleryService.js"></script>
+      <script src="./injectorService.js"></script>
+      <!-- <script src="./mycontroller.js"></script> -->
+
+      <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css">
+      <!--      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>-->
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js"></script>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+   </head>
+   <body  ng-controller="MyCtrl">
+      <div  id="my_header" class=" header_section"  ng-show="isHeaderVisible" >
+         <div class="headerData ">
+            <div class="Dummy">
+               <a  ng-show="showLogout">logout</a>
+               <p  ng-show="showBack" ng-click="goBack()" class="backBtn">Back</p>
+            </div>
+            <div class="headerTitle">
+               <h3>Myapp</h3>
+            </div>
+            <div class="headerImg" ng-click="burgermenu()">
+               <img ng-src="images/menu.png" >
+            </div>
+         </div>
+      </div>
+      <div class="menu" id="openstyle">
+         <div ng-click="closeMenu()" class="closebtn" >&times;</div>
+         <div class="navbarProfilepic"><img ng-src="{{userUrl}}"/></div>
+         <ul class="menu_list"  ng-show="showMenu">
+            <!-- <a href="#">logout</a> -->
+            <li ng-click="goProfile()">profile</li>
+            <li ng-click="goHome()">Home</li>
+            <li ng-click="goGallery()">Comapny Photos</li>
+            <li ng-click="logOut()">Logout</li>
+            
+         </ul>
+      </div>
+      <ng-view>
+      </ng-view>
+   </body>
+</html>

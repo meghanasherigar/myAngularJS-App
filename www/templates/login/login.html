@@ -1,0 +1,23 @@
+<form class="login_page"  
+   name="myForm" novalidate>
+   <div style="padding:10px;"  >
+      <div  style="padding:10px 0;"  class="user_name2">
+         <div class="user">Username</div>
+         <div ><input type="text" name="user" placeholder="Enter username " ng-model="uname" id="user_name" required>
+            <span
+               ng-show="myForm.user.$invalid && !myForm.user.$pristine">
+            Username is Required
+            </span>
+         </div>
+      </div>
+      <div  style="padding:10px 0;"  class="email">
+         <div class="email2">Email</div>
+         <div ><input type="email" name="emailt" placeholder="Enter email"   id="user_email"ng-model="email"  required>
+            <span ng-show="myForm.emailt.$error.email">This email format is invalid!</span>
+         </div>
+      </div>
+      <div style="padding: 15px 5px 0 5px;
+         text-align: center;
+         margin-top: 10px;"><input type="submit" value="Login" ng-click="authenticate();" ></div>
+   </div>
+</form>

@@ -1,0 +1,40 @@
+<div id="tabContainer"  ng-cloak class="tabContainer galleryContainer">
+   <md-content >
+      <md-tabs class="md-accent" md-selected="data.selectedIndex" >
+         <md-tab id="tab1">
+            <md-tab-label>Campus</md-tab-label>
+            <md-tab-body>
+               <div class=" campusBlock">
+                  <div ng-repeat="campImg in galleryImagesCamp" class=" galleryImgs">
+                   <img ng-src={{campImg.url}} alt={{campImg.title}}>
+                   
+                   </div>
+               </div>
+            </md-tab-body>
+         </md-tab>
+         <md-tab id="tab2" >
+            <md-tab-label>Infrastructure</md-tab-label>
+            <md-tab-body>
+               <div class=" campusBlock">
+                  <div ng-repeat="infraImg in galleryImagesInfra" class=" galleryImgs">
+                   <img ng-src={{infraImg.url}} alt={{infraImg.title}}>
+                   
+                   </div>
+               </div>
+            </md-tab-body>
+         </md-tab>
+         <md-tab id="tab3">
+            <md-tab-label>Annual gathering</md-tab-label>
+            <md-tab-body>
+               <div class=" campusBlock">
+                  <div ng-repeat="annualImg in galleryImagesInfrannualGathering" class=" galleryImgs">
+                   <img ng-src={{annualImg.url}} alt={{annualImg.title}}>
+                   
+                   </div>
+               </div>
+            </md-tab-body>
+         </md-tab>
+        
+      </md-tabs>
+   </md-content>
+</div>
